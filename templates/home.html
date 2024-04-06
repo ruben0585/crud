@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
+    {% if user.is_authenticated %}
+        Hi {{ user.username }}! Welcome
+    {% else %}
+        <p>No estas registrado</p>
+        <a href="{% url 'login' %}">Regístrate AQUÍ</a>
+    {% endif %}
+
     {% for publication in publication_list %}
         <h2><a href="{% url 'post_detail' publication.pk %}">{{ publication.title }}</a></h2>
         <p>{{ publication.author }}</p>
