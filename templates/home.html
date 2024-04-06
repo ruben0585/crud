@@ -10,6 +10,7 @@
     {% else %}
         <p>No estas registrado</p>
         <a href="{% url 'login' %}">Regístrate AQUÍ</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
     {% endif %}
 
     {% for publication in publication_list %}
